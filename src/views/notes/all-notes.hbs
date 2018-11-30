@@ -1,6 +1,15 @@
+<br>
 <div class="row">
+  <div class="card">
+    <div class="card-header">
+      <h1>Hola {{user.name}}</h1>
+    </div>
+    <div class="card-body">
+      <p>Bienvenido al sistema de notas</p>
+    </div>
+  </div>
   {{#each notes}}
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card">
         <div class="card-body">
           <h4 class="card-title d-flex justify-content-between align-items-center">
@@ -17,6 +26,8 @@
       </div>
     </div>
     {{else}}
+    <br>
+    <div class="col-md-4">
       <div class="card mx-auto">
         <div class="card-body">
           <p class="lead">Ingrese una nueva nota</p>
@@ -24,5 +35,6 @@
         </div>
 
       </div>
+    </div>  
   {{/each}}
 </div>

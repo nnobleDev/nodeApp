@@ -30,11 +30,18 @@ router.post('/users/signup', async (req,res)=>{
     res.render('users/signup', {errors,name,email,password,confirm_password})
   }else{
     //res.send('ok');
-    const newUser = new User({name, email, password});
-    newUser.password = await newUser.encryptPassword(password)
-    await newUser.save();
-    req.flash('success_msg','Usuario registrado');
-    res.redirect('/users/signin');
+    const emailUser = await User.findOne({email: email});
+    if(emailUser){
+      req.flash('error_msg','Email ya registrado');
+      res.redirect('/users/signup');
+    }else{
+      const newUser = new User({name, email, password});
+      newUser.password = await newUser.encryptPassword(password)
+      await newUser.save();
+      req.flash('success_msg','Usuario registrado');
+      res.redirect('/users/signin');
+    }
+
   }
 
 });

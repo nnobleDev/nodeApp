@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Note = require('../models/Note');
 
-router.get('/', async(req, res)=>{
-  const notes= await Note.find().sort({date:'desc'});
-  res.render('index',{notes});
+router.get('/', (req, res)=>{
+  res.render('index');
 });
 
 router.get('/about', (req,res)=>{

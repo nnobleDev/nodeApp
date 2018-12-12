@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 const Note = require('../models/Note');
-const {isAuthenticated} = require('../helpers/auth')
+const {isAuthenticated} = require('../helpers/auth');
 
 
 

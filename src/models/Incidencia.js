@@ -8,3 +8,4 @@ const IncidenciaSchema = new Schema({
 
 
 module.exports = mongoose.model('Incidencia', IncidenciaSchema);
+

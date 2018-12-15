@@ -22,8 +22,8 @@
           <div class="form-group">
               <label for="departamento">Departamento designado</label>
               <select name="departamento" id="tipo" class="form-control">
-                  {{#each tipos}}
-                    <option value="{{tipo}}">{{ tipo }}</option>
+                  {{#each dto}}
+                    <option value="{{nombre}}">{{ nombre }}</option>
                   {{/each}}
               </select> 
           </div>

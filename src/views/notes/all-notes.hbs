@@ -2,7 +2,7 @@
 <div class="row">
   <div class="card">
     <div class="card-header">
-      <h1>Hola {{user.name}}</h1>
+      <h1>Hola {{user.name}}-{{user.departamento}}</h1>
     </div>
     <div class="card-body">
       <p>Bienvenido al sistema de notas</p>
@@ -12,7 +12,6 @@
 </div>
 <hr>
 <div class="row">
- 
     {{#each notes}}
     <div class="col-md-4">
       <div class="card">

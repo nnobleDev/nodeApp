@@ -1,1 +1,26 @@
-<p>Todas las incidencias</p>
+<br>
+<div class="container">
+    <div class="row">
+        {{#each incDto}}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{tipo}}</h3>
+                    <p>{{descripcion}}</p>
+                    <p>{{usuario}}</p>
+                    <p>{{fecha}}</p>
+                    <form class="" action="/incidencias/resolver/{{_id}}?_method=PUT" method="post">
+                        <select name="estado" id="">
+                            <option value="{{estado}}" selected>{{estado}}</option>
+                            <option value="resuelto">Resuelto</option>
+                        </select>
+                    
+                        <input type="hidden" name="_method" value="PUT">
+                        <button type="submit"class="btn btn-primary btn-block btn-sm">RESOLVER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
